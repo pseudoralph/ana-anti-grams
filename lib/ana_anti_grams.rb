@@ -1,5 +1,3 @@
-require 'pry'
-
 class Anagramer
   def initialize(word)
     @second_word
@@ -27,9 +25,8 @@ class Anagramer
 
     if (@first_word.downcase.length == chars_map.length) & is_same_length?
       result = "These words are anagrams."
-    end
 
-    if chars_map.length == 0
+    elsif chars_map.length == 0
       result = "These words have no letter matches and are antigrams."
     end
 

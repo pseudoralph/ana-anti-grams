@@ -33,5 +33,10 @@ describe ('ana_anti_grams') do
     expect(hi.anagram('bye')).to eq("These words have no letter matches and are antigrams.")
   end
 
+  it ('parses multi-word phrases') do
+    expect(phrase = Anagramer.new("banana lantern"))
+    expect(phrase.anagram("antenna ran lab")).to eq("These words are anagrams.")
+  end
+
 
 end
