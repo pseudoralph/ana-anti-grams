@@ -1,4 +1,4 @@
-# Food Tracker
+# Anagram Antigram Identifier
 
 #### An anagram and antigram identifier written in Ruby
 
