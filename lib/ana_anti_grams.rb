@@ -5,15 +5,18 @@ class Anagramer
     if is_word?(word)[0]
       @first_word = is_word?(word)[1]
     else
-      raise ArgumentError
-      puts "ERROR: #{is_word?(word)[1]}"
+      raise ArgumentError, "ERROR: #{is_word?(word)[1]}"
     end
 
     @second_word
   end
 
   def anagram(word_to_test)
-    @second_word = word_to_test
+    if is_word?(word_to_test)[0]
+      @second_word = is_word?(word_to_test)[1]
+    else
+      return "ERROR-#{is_word?(word_to_test)[1]}: #{word_to_test} contains no vowels. Try again."
+    end
     result = "These words are NOT anagrams."
 
     if (@first_word.downcase == @second_word.downcase)
@@ -73,5 +76,6 @@ class Anagramer
 
 end
 
-# ttt = Anagramer.new("ttt")
-# puts ttt.anagram("bury")
+# ruby = Anagramer.new('ruby')
+# puts ruby.anagram('bury')
+# puts ruby.anagram('brrr')
