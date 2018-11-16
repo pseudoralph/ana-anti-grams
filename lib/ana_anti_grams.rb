@@ -2,16 +2,14 @@ require 'pry'
 
 class Anagramer
   def initialize(word)
-    @first_word
-    @second_word
-
-    if is_word?(word)
-      @first_word = word
+    if is_word?(word)[0]
+      @first_word = is_word?(word)[1]
     else
-
-      puts "#{word} error"
+      raise ArgumentError
+      puts "ERROR: #{is_word?(word)[1]}"
     end
 
+    @second_word
   end
 
   def anagram(word_to_test)
@@ -52,10 +50,10 @@ class Anagramer
     end
 
     if word_vowels_array.include?(true)
-      return word
+      return true, word
     end
 
-    false
+    return false, 'not_a_word'
   end
 
   # def is_same_ascii_sum?
@@ -76,3 +74,4 @@ class Anagramer
 end
 
 # ttt = Anagramer.new("ttt")
+# puts ttt.anagram("bury")

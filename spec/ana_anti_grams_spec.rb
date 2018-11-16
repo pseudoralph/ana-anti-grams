@@ -20,7 +20,10 @@ describe ('ana_anti_grams') do
   end
 
   it ('report an error if Anagrammer object is created with a non-word (no vowels)') do
-    expect(ttt = Anagramer.new("ttt")).to(eq('no'))
+    expect { ttt = Anagramer.new("ttt") }.to raise_error(ArgumentError)
+    # expect { raise "oops" }.to raise_error
   end
+
+
 
 end
