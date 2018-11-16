@@ -10,7 +10,7 @@ class Anagramer
     @second_word = word_to_test
     result = "These words are NOT anagrams."
 
-    if (@first_word == @second_word)
+    if (@first_word.downcase == @second_word.downcase)
       return "#{@second_word} can't be an anagram of itself."
     end
 
@@ -23,7 +23,7 @@ class Anagramer
   def same_chars_included?
     bool_array = []
     @first_word.each_char do |letter|
-      bool_array.push(@second_word.include?(letter))
+      bool_array.push(@second_word.downcase.include?(letter.downcase))
     end
     if bool_array.include?(false)
       return false
@@ -35,19 +35,19 @@ class Anagramer
     @first_word.length == @second_word.length
   end
 
-  def is_same_ascii_sum?
-    first_word_sum = 0
-    second_word_sum = 0
-
-    @first_word.each_char do |letter|
-      first_word_sum += letter.ord
-    end
-
-    @second_word.each_char do |letter|
-      second_word_sum += letter.ord
-    end
-
-    first_word_sum == second_word_sum
-  end
+  # def is_same_ascii_sum?
+  #   first_word_sum = 0
+  #   second_word_sum = 0
+  #
+  #   @first_word.each_char do |letter|
+  #     first_word_sum += letter.ord
+  #   end
+  #
+  #   @second_word.each_char do |letter|
+  #     second_word_sum += letter.ord
+  #   end
+  #
+  #   first_word_sum == second_word_sum
+  # end
 
 end
