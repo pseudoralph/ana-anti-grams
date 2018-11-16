@@ -9,6 +9,11 @@ class Anagramer
   def anagram(word_to_test)
     @second_word = word_to_test
     result = "These words are NOT anagrams."
+
+    if (@first_word == @second_word)
+      return "#{@second_word} can't be an anagram of itself."
+    end
+
     if same_chars_included?() & is_same_length?()
       result = "These words are anagrams."
     end
@@ -30,25 +35,19 @@ class Anagramer
     @first_word.length == @second_word.length
   end
 
-  # def is_same_ascii_sum?
-  #   first_word_sum = 0
-  #   second_word_sum = 0
-  #
-  #   @first_word.each_char do |letter|
-  #     first_word_sum += letter.ord
-  #   end
-  #
-  #   @second_word.each_char do |letter|
-  #     second_word_sum += letter.ord
-  #   end
-  #
-  #   first_word_sum == second_word_sum
-  # end
+  def is_same_ascii_sum?
+    first_word_sum = 0
+    second_word_sum = 0
+
+    @first_word.each_char do |letter|
+      first_word_sum += letter.ord
+    end
+
+    @second_word.each_char do |letter|
+      second_word_sum += letter.ord
+    end
+
+    first_word_sum == second_word_sum
+  end
 
 end
-
-
-
-ruby = Anagramer.new("ruby")
-puts ruby.anagram("bury")
-puts ruby.anagram("fury")
