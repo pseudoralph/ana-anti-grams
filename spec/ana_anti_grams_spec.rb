@@ -20,7 +20,7 @@ describe ('ana_anti_grams') do
   end
 
   it ('raise error if Anagrammer object is initialized with non-word (no vowels)') do
-    expect { ttt = Anagramer.new("ttt") }.to raise_error(ArgumentError)
+    expect{ttt = Anagramer.new("ttt")}.to raise_error(ArgumentError)
   end
 
   it ("report error to user if argument passed into #anagram() is non word") do
@@ -28,11 +28,10 @@ describe ('ana_anti_grams') do
     expect(ruby.anagram('brrr')).to eq("ERROR-not_a_word: brrr contains no vowels. Try again.")
   end
 
-  # it ('report an error if #anagram() argument is a non-word (no vowels)') do
-  #   expect
-  #   ("ERROR-not_a_word: brrr contains no vowels. Try again.")
-  # end
-
+  it ('determines whether words are antigrams (no shared letters)') do
+    expect(ruby = Anagramer.new("ruby"))
+    expect(ruby.anagram('alpha')).to eq("These words have no letter matches and are antigrams.")
+  end
 
 
 end
