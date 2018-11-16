@@ -1,9 +1,17 @@
 require 'pry'
 
 class Anagramer
-  def initialize(first_word)
-    @first_word = first_word
+  def initialize(word)
+    @first_word
     @second_word
+
+    if is_word?(word)
+      @first_word = word
+    else
+
+      puts "#{word} error"
+    end
+
   end
 
   def anagram(word_to_test)
@@ -35,6 +43,21 @@ class Anagramer
     @first_word.length == @second_word.length
   end
 
+  def is_word?(word)
+    vowels = ['a','e','i','o','u','y']
+    word_vowels_array = []
+
+    word.each_char do |letter|
+      word_vowels_array.push(vowels.include?(letter.downcase))
+    end
+
+    if word_vowels_array.include?(true)
+      return word
+    end
+
+    false
+  end
+
   # def is_same_ascii_sum?
   #   first_word_sum = 0
   #   second_word_sum = 0
@@ -51,3 +74,5 @@ class Anagramer
   # end
 
 end
+
+# ttt = Anagramer.new("ttt")
