@@ -1,47 +1,45 @@
 class Anagramer
   def initialize(word)
-    @second_word
-
-    if is_word?(word)[0]
-      @first_word = is_word?(word)[1].gsub(/\W/, '')
+    if is_word?(word)
+      @base_word = word.gsub(/\W/, '')
     else
-      raise ArgumentError, "ERROR: #{is_word?(word)[1]}"
+      raise ArgumentError, "ERROR: #{word} is not a word"
     end
   end
 
   def anagram(word_to_test)
     result = "These words are NOT anagrams."
 
-    if is_word?(word_to_test)[0]
-      @second_word = is_word?(word_to_test)[1].gsub(/\W/, '')
-      if (@first_word.downcase == @second_word.downcase)
-        return "#{@second_word} can't be an anagram of itself."
+    if is_word?(word_to_test)
+      word_to_test = word_to_test.gsub(/\W/, '')
+      if (@base_word.downcase == word_to_test.downcase)
+        return "#{word_to_test} can't be an anagram of itself."
       end
     else
-      return "ERROR-#{is_word?(word_to_test)[1]}: #{word_to_test} contains no vowels. Try again."
+      return "ERROR-not_a_word: #{word_to_test} contains no vowels. Try again."
     end
 
-    if (@first_word.length == chars_map.length) & is_same_length?
+    if (@base_word.length == chars_map(word_to_test).length) & is_same_length?(word_to_test)
       result = "These words are anagrams."
-    elsif chars_map.length == 0
+    elsif chars_map(word_to_test).length == 0
       result = "These words have no letter matches and are antigrams."
     end
     result
   end
 
-  def chars_map
+  def chars_map(word_to_test)
     shared_letters = []
 
-    @first_word.each_char do |letter|
-      if @second_word.downcase.include?(letter.downcase)
+    @base_word.each_char do |letter|
+      if word_to_test.downcase.include?(letter.downcase)
         shared_letters.push(letter)
       end
     end
     shared_letters
   end
 
-  def is_same_length?
-    @first_word.length == @second_word.length
+  def is_same_length?(word_to_test)
+    @base_word.length == word_to_test.length
   end
 
   def is_word?(word)
@@ -53,8 +51,8 @@ class Anagramer
     end
 
     if word_vowels_array.include?(true)
-      return true, word
+      return true
     end
-    return false, 'not_a_word'
+    false
   end
 end
