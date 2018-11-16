@@ -3,7 +3,7 @@ class Anagramer
     @second_word
 
     if is_word?(word)[0]
-      @first_word = is_word?(word)[1]
+      @first_word = is_word?(word)[1].gsub(/\W/, '')
     else
       raise ArgumentError, "ERROR: #{is_word?(word)[1]}"
     end
@@ -11,10 +11,11 @@ class Anagramer
   end
 
   def anagram(word_to_test)
+
     result = "These words are NOT anagrams."
 
     if is_word?(word_to_test)[0]
-      @second_word = is_word?(word_to_test)[1]
+      @second_word = is_word?(word_to_test)[1].gsub(/\W/, '')
     else
       return "ERROR-#{is_word?(word_to_test)[1]}: #{word_to_test} contains no vowels. Try again."
     end

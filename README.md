@@ -2,10 +2,10 @@
 
 #### An anagram and antigram identifier written in Ruby
 
-#### Ralph Perdomo. November 2018
+#### Ralph Perdomo. November 16, 2018
 
 ## Description
-An anagram and antigram 
+This app will allow the user to create an anagram object and test whether certain words or phrases are considered an anagram of the original object.
 
 ## Setup/Installation Requirements
 
@@ -19,9 +19,9 @@ An anagram and antigram
 Ruby
 
 ## Objectives
-- [ ] Code uses a custom class and instance variables.
+- [x] Code uses a custom class and instance variables.
 
-- [ ] Specs have complete coverage for the behaviors that need to be tested. There should be at least 5 unit tests.
+- [x] Specs have complete coverage for the behaviors that need to be tested. There should be at least 5 unit tests.
 
 - [ ] All specs are passing.
 
@@ -35,9 +35,9 @@ Ruby
 
 - [ ] Required functionality is in place by the 5:00pm Friday deadline.
 
-- [ ] Project is in a polished, portfolio-quality state.
+- [x] Project is in a polished, portfolio-quality state.
 
-- [ ] Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology.
+- [x] Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology.
 
 ---
 
@@ -45,7 +45,7 @@ Ruby
 
 MIT License
 
-Copyright (c) 2018, Katrina Hockman, Tavish O'Keefe, Ralph Perdomo, Devin Sweeting
+Copyright (c) 2018, Ralph Perdomo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
