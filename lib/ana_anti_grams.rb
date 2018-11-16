@@ -7,30 +7,25 @@ class Anagramer
     else
       raise ArgumentError, "ERROR: #{is_word?(word)[1]}"
     end
-
   end
 
   def anagram(word_to_test)
-
     result = "These words are NOT anagrams."
 
     if is_word?(word_to_test)[0]
       @second_word = is_word?(word_to_test)[1].gsub(/\W/, '')
+      if (@first_word.downcase == @second_word.downcase)
+        return "#{@second_word} can't be an anagram of itself."
+      end
     else
       return "ERROR-#{is_word?(word_to_test)[1]}: #{word_to_test} contains no vowels. Try again."
     end
 
-    if (@first_word.downcase == @second_word.downcase)
-      return "#{@second_word} can't be an anagram of itself."
-    end
-
-    if (@first_word.downcase.length == chars_map.length) & is_same_length?
+    if (@first_word.length == chars_map.length) & is_same_length?
       result = "These words are anagrams."
-
     elsif chars_map.length == 0
       result = "These words have no letter matches and are antigrams."
     end
-
     result
   end
 
@@ -42,8 +37,7 @@ class Anagramer
         shared_letters.push(letter)
       end
     end
-    return shared_letters
-
+    shared_letters
   end
 
   def is_same_length?
@@ -61,8 +55,6 @@ class Anagramer
     if word_vowels_array.include?(true)
       return true, word
     end
-
     return false, 'not_a_word'
   end
-
 end

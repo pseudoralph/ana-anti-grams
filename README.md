@@ -13,6 +13,7 @@ This app will allow the user to create an anagram object and test whether certai
 * navigate to the downloaded repo
 * run the ruby gem `bundle` to install necessary gems
   * NOTE: install `bundle` using `gem install bundle` if not installed
+* type `rspec` to see test's results
 
 ## Technologies Used
 
@@ -23,17 +24,17 @@ Ruby
 
 - [x] Specs have complete coverage for the behaviors that need to be tested. There should be at least 5 unit tests.
 
-- [ ] All specs are passing.
+- [x] All specs are passing.
 
-- [ ] Logic is easy to understand.
+- [x] Logic is easy to understand.
 
-- [ ] Code has proper indentation and spacing.
+- [x] Code has proper indentation and spacing.
 
-- [ ] Variable names are descriptive.
+- [x] Variable names are descriptive.
 
-- [ ] Thorough Git documentation is present (regular commits with clear messages completing the sentence "This commit will..." and a complete README). There should be at least 11 commits.
+- [x] Thorough Git documentation is present (regular commits with clear messages completing the sentence "This commit will..." and a complete README). There should be at least 11 commits.
 
-- [ ] Required functionality is in place by the 5:00pm Friday deadline.
+- [x] Required functionality is in place by the 5:00pm Friday deadline.
 
 - [x] Project is in a polished, portfolio-quality state.
 
