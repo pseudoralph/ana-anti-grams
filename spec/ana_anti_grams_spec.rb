@@ -29,8 +29,8 @@ describe ('ana_anti_grams') do
   end
 
   it ('determines whether words are antigrams (no shared letters)') do
-    expect(ruby = Anagramer.new("ruby"))
-    expect(ruby.anagram('alpha')).to eq("These words have no letter matches and are antigrams.")
+    expect(hi = Anagramer.new("hi"))
+    expect(hi.anagram('bye')).to eq("These words have no letter matches and are antigrams.")
   end
 
 

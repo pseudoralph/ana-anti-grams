@@ -21,31 +21,31 @@ class Anagramer
       return "ERROR-#{is_word?(word_to_test)[1]}: #{word_to_test} contains no vowels. Try again."
     end
 
-
     if (@first_word.downcase == @second_word.downcase)
       return "#{@second_word} can't be an anagram of itself."
     end
 
-    if same_chars_included?() & is_same_length?()
+    if (@first_word.downcase.length == chars_map.length) & is_same_length?
       result = "These words are anagrams."
+    end
+
+    if chars_map.length == 0
+      result = "These words have no letter matches and are antigrams."
     end
 
     result
   end
 
-
-  def same_chars_included?
-    bool_array = []
+  def chars_map
+    shared_letters = []
 
     @first_word.each_char do |letter|
-      bool_array.push(@second_word.downcase.include?(letter.downcase))
+      if @second_word.downcase.include?(letter.downcase)
+        shared_letters.push(letter)
+      end
     end
+    return shared_letters
 
-    if bool_array.include?(false)
-      return false
-    end
-    
-    true
   end
 
   def is_same_length?
