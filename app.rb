@@ -8,7 +8,7 @@ get ("/") do
   erb ( :index)
 end
 
-get ("/is_it") do
+post ("/is_it") do
   first_word = params.fetch("first_word")
   second_word = params.fetch("second_word")
   
