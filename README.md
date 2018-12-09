@@ -15,8 +15,6 @@ This app will allow the user to create an anagram object and test whether certai
   * NOTE: install `bundle` using `gem install bundle` if not installed
 * type `rspec` to see test's results
 
-This app can also be accessed by visiting: [http://anagram.prdmo.com/](http://anagram.prdmo.com/)
-
 ## Technologies Used
 
 Ruby
